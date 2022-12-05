@@ -1,0 +1,144 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root{
+    --hue-neutral:200;
+    --hue-wrong:0;
+    --hue-correct:150;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+body{
+    --hue: var(--hue-neutral);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    font-size: 2rem;
+    background-color: hsl(var(--hue), 100%, 20%);
+}
+body.correct{
+    --hue:var(--hue-correct);
+
+}
+body.wrong{
+    --hue:var(--hue-wrong);
+}
+.container{
+    width: 800px;
+    max-width: 95%;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    padding: 2rem;
+    box-shadow: 0 2px 10px 3px rgba(0, 0, 0, 0.5);
+}
+.btn-grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+.btn{
+    --hue:var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 10px;
+    padding: 1rem;
+    color: #ffffff;
+    outline: none;
+}
+.btn:hover{
+    color: #000;
+
+}
+.btn.correct{
+    --hue:var(--hue-correct);
+    color: #2222;
+}
+.btn.wrong{
+    --hue:var(--hue-wrong);
+}
+.start-btn, .next-btn{
+    font-size: 2rem;
+    font-weight: 700;
+    padding: .5rem 1rem;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.hide{
+    display: none;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
