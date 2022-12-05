@@ -126,7 +126,13 @@ textarea,
 select {
   font: inherit;
 }
-
+/* media Querry */
+@media (max-width:920px){
+    .container{
+        width: 800px;
+       max-width: 95%;
+    }
+}
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -142,3 +148,4 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
